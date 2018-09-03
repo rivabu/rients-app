@@ -1,0 +1,24 @@
+<section class="todoapp">
+  <!-- Every time we call add.emit(value) in ToListHeaderComponent the onAddTodo($event) handler will be callend and $event wil be equal to value. -->
+
+  <app-todo-list-header (add)="onAddTodo($event)"></app-todo-list-header>
+
+  <!-- linkerkant van de argumenten zijn inputs en outputs in de component -->
+  <!-- input, inject todos -->
+  <!-- toggleComplete = output, eventTransmitter roept onToggleComplete aan -->
+  <!-- remove = output, eventTransmitter roept onRemoveTodo aan -->
+  <app-todo-list
+    [todos]="todos"
+    (toggleComplete)="onToggleComplete($event)"
+    (remove)="onRemoveTodo($event)"
+  >
+  </app-todo-list>
+
+  <!-- input, inject todos -->
+  <app-todo-list-footer
+    [todos]="todos">
+  </app-todo-list-footer>
+</section>
+
+<!-- Sign out button -->
+<button (click)="doSignOut()">Sign out</button>

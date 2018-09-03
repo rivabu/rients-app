@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "id": 2,
+      "title": "Angular App maken",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Boekhouding aanleveren",
+      "complete": true
+    }
+  ]
+}
