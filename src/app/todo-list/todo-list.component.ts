@@ -20,14 +20,17 @@ export class TodoListComponent implements OnInit {
 
   @Output()
   remove: EventEmitter<Todo> = new EventEmitter();
-  toggleComplete: EventEmitter<Todo> = new EventEmitter();
+  @Output()
+  toggle: EventEmitter<Todo> = new EventEmitter();
 
   // 2 eventhandlers
-  onToggleTodoComplete(todo: Todo) {
-    this.toggleComplete.emit(todo);
-  }
+  onToggleTodo(todo: Todo) {
+    console.log('onToggleTodo');
+    this.toggle.emit(todo);
+  };
 
   onRemoveTodo(todo: Todo) {
+    console.log('onRemoveTodo');
     this.remove.emit(todo);
   }
 

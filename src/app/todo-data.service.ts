@@ -31,8 +31,9 @@ export class TodoDataService {
     return this.api.getAllTodos();
   }
 
-  toggleTodoComplete(todo: Todo) {
+  toggleTodoComplete(todo: Todo): Observable<Todo> {
     todo.complete = !todo.complete;
+    console.log('todo.complete: ' + todo.complete);
     return this.api.updateTodo(todo);
   }
 }

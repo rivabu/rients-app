@@ -1,6 +1,9 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
+
+//Laad hier de todo's in
 const router = jsonServer.router('db.json');
+
 const middlewares = jsonServer.defaults();
 const bodyParser = require('body-parser');
 

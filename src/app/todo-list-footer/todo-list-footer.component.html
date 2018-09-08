@@ -1,3 +1,4 @@
-<footer class="footer" *ngIf="todos.length > 0">
-  <span class="todo-count"><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
-</footer>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-9" *ngIf="todos.length > 0"><span class="todo-count"><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span></div>
+</div>

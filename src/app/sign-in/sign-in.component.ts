@@ -16,14 +16,15 @@ export class SignInComponent implements OnInit {
   public isBusy: boolean = false;
   public hasFailed: boolean = false;
   public showInputErrors: boolean = false;
+  public condition: boolean = false;
 
   constructor(private api: ApiService,
               private auth: AuthService,
               private fb: FormBuilder,
               private router: Router) {
     this.frm = fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['demo', Validators.required],
+      password: ['demo', Validators.required]
     })
   }
 
@@ -54,6 +55,7 @@ export class SignInComponent implements OnInit {
             response.token,
             response.name
           );
+          // todos = the url!!
           this.router.navigate(['todos']);
 
         },

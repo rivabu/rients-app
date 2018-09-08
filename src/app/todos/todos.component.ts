@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {TodoDataService} from "../todo-data.service";
 import {Todo} from "../todo";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {map} from "rxjs/operators";
-import {AuthService} from "../auth.service";
 
 @Component({
   selector: 'app-todos',
@@ -15,12 +14,13 @@ export class TodosComponent implements OnInit {
 
   todos: Todo[] = [];
 
-  constructor(private todoDataService: TodoDataService, private route: ActivatedRoute, private auth: AuthService, private router: Router) {
+  constructor(private todoDataService: TodoDataService, private route: ActivatedRoute) {
   }
 
   public ngOnInit() {
+    // ophalen bij de router, die heeft de todoResolver aangeroepen: this.route.data ..
     this.route.data.pipe(
-      map((data) => data['todos']))
+      map((data) => data['todosFromResolver']))
       .subscribe(
         (todos) => {
           this.todos = todos;
@@ -34,7 +34,8 @@ export class TodosComponent implements OnInit {
     });
   }
 
-  onToggleComplete(todo: Todo) {
+  onToggleTodoComplete(todo: Todo) {
+    console.log('onToggleTodoComplete');
     this.todoDataService.toggleTodoComplete(todo).subscribe((updatedTodo) => todo = updatedTodo);
   }
 
@@ -45,10 +46,7 @@ export class TodosComponent implements OnInit {
     })
   };
 
-  doSignOut() {
-    this.auth.doSignOut();
-    this.router.navigate(['/sign-in']);
-  }
+
 
 
 }

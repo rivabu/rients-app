@@ -74,11 +74,11 @@ export class ApiService {
 
   public updateTodo(todo: Todo) {
     const options = this.getRequestOptions();
-    return this.http.put(API_URL + '/todos/', todo, options).pipe
+    return this.http.put(API_URL + '/todos/' + todo.id, todo, options).pipe
     (
       map(
         (response: any) => {
-          return new Todo(response.json())
+          return new Todo(response)
         }
       ),
       catchError(this.handleError)

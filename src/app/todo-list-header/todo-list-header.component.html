@@ -1,5 +1,27 @@
-<header class="header">
-  <h1>Todos</h1>
-  <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title"
-         (keyup.enter)="addTodo()">
-</header>
+<div class="row">
+  <div class="col-md-1">1</div>
+  <div class="col-md-1">2</div>
+  <div class="col-md-1"><a [routerLink]="['/todos']">ToDo's</a></div>
+  <div class="col-md-1">4</div>
+  <div class="col-md-1">5</div>
+  <div class="col-md-1">6</div>
+  <div class="col-md-1">7</div>
+  <div class="col-md-1">8</div>
+  <div class="col-md-1">9</div>
+  <div class="col-md-1">10</div>
+  <div class="col-md-1">11</div>
+  <div class="col-md-1"><button (click)="doSignOut()" class="btn btn-primary">Sign out</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-9"><h1>Header Todos</h1></div>
+</div>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-7"><input class="form-control" placeholder="What needs to be done?" autofocus=""
+                               [(ngModel)]="newTodo.title"
+                               (keyup.enter)="addTodo()"
+  maxlength="100"></div>
+</div>
+

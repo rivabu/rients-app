@@ -15,7 +15,8 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 import {SessionService} from "./session.service";
 import {AuthService} from "./auth.service";
 import {SignInComponent} from './sign-in/sign-in.component';
-
+import {MyErrorDirective} from './my-error.directive';
+import {MyIfDirective} from './my-if.directive';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,16 @@ import {SignInComponent} from './sign-in/sign-in.component';
     TodoListFooterComponent,
     TodosComponent,
     PageNotFoundComponent,
-    SignInComponent
+    SignInComponent,
+    MyErrorDirective,
+    MyIfDirective
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule
   ],
   providers: [TodoDataService, ApiService, SessionService, AuthService], // global provider
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], // kunnen dus meerdere zijn
+  exports: [MyErrorDirective, MyIfDirective]
 })
 export class AppModule {
 }

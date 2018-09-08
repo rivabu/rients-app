@@ -15,13 +15,14 @@ const routes: Routes = [
   {
     path: 'sign-in',
     component: SignInComponent,
+    pathMatch: 'prefix'
   },
   {
     path: 'todos',
     component: TodosComponent,
     canActivate: [CanActivateTodoGuard],
     resolve: {
-      todos: TodosResolver
+      todosFromResolver: TodosResolver
     },
     data: {title: 'example of a static route'}
   },
