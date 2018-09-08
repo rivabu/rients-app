@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
 import {Todo} from './todo';
-import {ApiService} from "./api.service";
 import {Observable} from "rxjs";
+import {TodoApiService} from "./todo-api.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoDataService {
 
-  constructor(private api: ApiService) {
+  constructor(private api: TodoApiService) {
   }
 
   addTodo(todo: Todo): Observable<Todo> {

@@ -1,10 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {TodosComponent} from "./todos/todos.component";
-import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
-import {TodosResolver} from "./todos.resolver";
-import {SignInComponent} from "./sign-in/sign-in.component";
-import {CanActivateTodoGuard} from "./can-activate-todo.guard";
+import {PageNotFoundComponent} from "./shared/components/page-not-found/page-not-found.component";
 
 const routes: Routes = [
   {
@@ -14,17 +10,15 @@ const routes: Routes = [
   },
   {
     path: 'sign-in',
-    component: SignInComponent,
-    pathMatch: 'prefix'
+    loadChildren: '../app/sign-in/sign-in.module#SignInModule',
+    data: {preload: true}
   },
+
   {
     path: 'todos',
-    component: TodosComponent,
-    canActivate: [CanActivateTodoGuard],
-    resolve: {
-      todosFromResolver: TodosResolver
-    },
-    data: {title: 'example of a static route'}
+    loadChildren: '../app/todos/todos.module#TodosModule',
+    data: {preload: true},
+    pathMatch: 'full'
   },
   {
     path: '**',
@@ -35,9 +29,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [
-    TodosResolver, CanActivateTodoGuard
-  ]
+  providers: []
 })
 export class AppRoutingModule {
 }

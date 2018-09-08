@@ -1,7 +1,7 @@
 import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {Todo} from "../todo";
 import {Router} from "@angular/router";
-import {AuthService} from "../auth.service";
+import {AuthService} from "../../sign-in/auth.service";
 
 @Component({
   selector: 'app-todo-list-header',
@@ -33,6 +33,6 @@ export class TodoListHeaderComponent implements OnInit {
 
   goToToDos() {
     console.log('navigate to todos')
-    this.router.navigate(['todos']);
+    this.router.navigate(['/todos']);
   }
 }

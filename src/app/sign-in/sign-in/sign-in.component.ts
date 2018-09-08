@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService} from "../api.service";
-import { FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../auth.service";
 import {Router} from "@angular/router";
-import {ifTrue} from "codelyzer/util/function";
+import {SignInApiService} from "../sign-in-api.service";
 
 @Component({
   selector: 'app-sign-in',
@@ -18,7 +17,7 @@ export class SignInComponent implements OnInit {
   public showInputErrors: boolean = false;
   public condition: boolean = false;
 
-  constructor(private api: ApiService,
+  constructor(private api: SignInApiService,
               private auth: AuthService,
               private fb: FormBuilder,
               private router: Router) {
@@ -55,8 +54,11 @@ export class SignInComponent implements OnInit {
             response.token,
             response.name
           );
-          // todos = the url!!
-          this.router.navigate(['todos']);
+          // todos = the url!!\
+          let url = '/todos';
+;          console.log('routing to: ' + url);
+          this.router.navigate([url]);
+          //this.router.navigateByUrl(url);
 
         },
       (error) => {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo';
 import { Observable, fromEvent, of } from 'rxjs';
+import {Todo} from "./todos/todo";
 
 @Injectable()
 export class ApiMockService {

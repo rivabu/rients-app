@@ -8,7 +8,9 @@ export class SessionService {
   public accessToken: string;
   public name: string;
 
-  constructor() { }
+  constructor() {
+    console.log('new instance of SessionService created');
+  }
 
   public destroy() : void {
     this.accessToken = null;

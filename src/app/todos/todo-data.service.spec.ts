@@ -2,7 +2,7 @@
 
 import {TestBed, inject} from '@angular/core/testing';
 import {TodoDataService} from './todo-data.service';
-import { ApiService } from './api.service';
+import { TodoApiService } from './api.service';
 import { ApiMockService } from './api-mock.service';
 
 describe('TodoDataService', () => {
@@ -11,7 +11,7 @@ describe('TodoDataService', () => {
       providers: [
         TodoDataService,
         {
-          provide: ApiService,
+          provide: TodoApiService,
           useClass: ApiMockService
         }
       ]

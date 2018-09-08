@@ -1,11 +1,13 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard }            from './auth-guard.service';
-import { AuthService }          from './auth.service';
-import { LoginComponent }       from './login.component';
+import {SignInComponent} from "./sign-in/sign-in.component";
 
 const loginRoutes: Routes = [
-  { path: 'login', component: LoginComponent }
+  {
+    path: '',
+    component: SignInComponent,
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
@@ -16,8 +18,8 @@ const loginRoutes: Routes = [
     RouterModule
   ],
   providers: [
-    AuthGuard,
-    AuthService
   ]
 })
 export class LoginRoutingModule {}
+
+

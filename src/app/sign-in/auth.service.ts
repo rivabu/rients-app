@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
-import {SessionService} from "./session.service";
+import {SessionService} from "../shared/services/session.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private session: SessionService) { }
+  constructor(private session: SessionService) {
+    console.log('creating AuthService');
+  }
 
   public isSignedIn() {
+    console.log('isSigned in: ' + !!this.session.accessToken);
     return !!this.session.accessToken;
   }
 
   public doSignOut() {
+    console.log('destroy!!!');
     this.session.destroy();
   }
 

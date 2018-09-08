@@ -1,38 +1,25 @@
 import {Injectable} from '@angular/core';
-import {environment} from "../environments/environment";
-import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
-import {Todo} from "./todo";
+import {HttpClient} from "@angular/common/http";
 import {catchError, map} from "rxjs/operators";
-import {Observable, throwError} from 'rxjs';
-import {SessionService} from "./session.service";
-
-// import {HttpClient} from "@angular/common/http";
+import {Observable} from 'rxjs';
+import {environment} from "../../environments/environment";
+import {SessionService} from "../shared/services/session.service";
+import {Todo} from "./todo";
+import {GenericService} from "../shared/generic.service";
 
 const API_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class TodoApiService extends GenericService {
 
-  constructor(private http: HttpClient, private session: SessionService) {
-  }
-
-  public signIn(username: string, password: string) {
-    return this.http
-      .post(API_URL + '/sign-in', {
-        username,
-        password
-      })
-      .pipe(map((response: any) => {
-          const myResponse = response;
-          return myResponse;
-        }),
-        catchError(this.handleError)
-      )
+  constructor(private http: HttpClient, session: SessionService) {
+    super(session);
   }
 
   public getAllTodos(): Observable<Todo[]> {
+    console.log('here');
     const options = this.getRequestOptions();
     return this.http.get(API_URL + '/todos', options).pipe
     (
@@ -96,17 +83,6 @@ export class ApiService {
     )
   }
 
-  private handleError(error: Response | any) {
-    console.error('ApiService::handleError', error);
-    return throwError(error);
-  }
 
-  private getRequestOptions() {
-    const headers = new HttpHeaders({
-      'Authorization': 'Bearer ' + this.session.accessToken
-    });
-    return { headers};
-
-  }
 
 }

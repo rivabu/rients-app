@@ -1,10 +1,10 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ApiService } from './api.service';
 import { BaseRequestOptions, Http, XHRBackend } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
+import {TodoApiService} from "./todo-api.service";
 
-describe('ApiService', () => {
+describe('TodoApiService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
@@ -16,12 +16,12 @@ describe('ApiService', () => {
         },
         MockBackend,
         BaseRequestOptions,
-        ApiService
+        TodoApiService
       ]
     });
   });
 
-  it('should ...', inject([ApiService], (service: ApiService) => {
+  it('should ...', inject([TodoApiService], (service: TodoApiService) => {
     expect(service).toBeTruthy();
   }));
 });

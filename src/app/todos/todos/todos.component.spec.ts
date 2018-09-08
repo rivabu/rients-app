@@ -4,7 +4,7 @@ import { TodosComponent } from './todos.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ApiMockService } from '../api-mock.service';
 import { TodoDataService } from '../todo-data.service';
-import { ApiService } from '../api.service';
+import { TodoApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -18,7 +18,7 @@ describe('TodosComponent', () => {
       providers: [
         TodoDataService,
         {
-          provide: ApiService,
+          provide: TodoApiService,
           useClass: ApiMockService
         },
         {
