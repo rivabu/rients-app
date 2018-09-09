@@ -5,12 +5,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {SharedModule} from "./shared/shared.module";
-import {TodosModule} from "./todos/todos.module";
 
 @NgModule({
 
   imports: [
-    BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule, SharedModule, TodosModule
+    BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule, SharedModule
   ],
   declarations: [
     AppComponent

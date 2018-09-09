@@ -15,7 +15,7 @@ export class TodoListHeaderComponent implements OnInit {
   @Output()
   add: EventEmitter<Todo> = new EventEmitter();
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -26,13 +26,5 @@ export class TodoListHeaderComponent implements OnInit {
     this.newTodo = new Todo();
   }
 
-  doSignOut() {
-    this.auth.doSignOut();
-    this.router.navigate(['/sign-in']);
-  }
 
-  goToToDos() {
-    console.log('navigate to todos')
-    this.router.navigate(['/todos']);
-  }
 }

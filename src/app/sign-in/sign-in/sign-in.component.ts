@@ -15,7 +15,6 @@ export class SignInComponent implements OnInit {
   public isBusy: boolean = false;
   public hasFailed: boolean = false;
   public showInputErrors: boolean = false;
-  public condition: boolean = false;
 
   constructor(private api: SignInApiService,
               private auth: AuthService,
@@ -55,7 +54,7 @@ export class SignInComponent implements OnInit {
             response.name
           );
           // todos = the url!!\
-          let url = '/todos';
+          let url = '/dashboard';
 ;          console.log('routing to: ' + url);
           this.router.navigate([url]);
           //this.router.navigateByUrl(url);

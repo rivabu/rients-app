@@ -1,18 +1,4 @@
 <form [formGroup]="frm">
-  <div class="row">
-    <div class="col-md-1">1</div>
-    <div class="col-md-1">2</div>
-    <div class="col-md-1">3</div>
-    <div class="col-md-1">4</div>
-    <div class="col-md-1">5</div>
-    <div class="col-md-1">6</div>
-    <div class="col-md-1">7</div>
-    <div class="col-md-1">8</div>
-    <div class="col-md-1">9</div>
-    <div class="col-md-1">10</div>
-    <div class="col-md-1">11</div>
-    <div class="col-md-1">12</div>
-  </div>
   <div class="row"></div>
 <div class="row">
   <div class="col-md-4"></div>
@@ -85,11 +71,5 @@
       </fieldset>
 
   </div>
-</div>
-<br />
-<br />
-<div align="center">
-  <div *myIf="condition">Hello {{frm.get('username').value}}</div>
-  <button class="btn btn-primary" (click)="condition = !condition">Click Myif Directive</button>
 </div>
 </form>
