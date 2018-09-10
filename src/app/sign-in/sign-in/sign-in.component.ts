@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../auth.service";
 import {Router} from "@angular/router";
 import {SignInApiService} from "../sign-in-api.service";
+import {OnDestroy} from '@angular/core';
 
 @Component({
   selector: 'app-sign-in',
@@ -66,4 +67,5 @@ export class SignInComponent implements OnInit {
       }
       );
   }
+
 }
