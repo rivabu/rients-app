@@ -14,6 +14,5 @@ export class TodoListFooterComponent implements OnInit {
   }
 
   // door de input kan het geinject worden
-  @Input()
-  todos: Todo[];
+  @Input() todos: Todo[];
 }

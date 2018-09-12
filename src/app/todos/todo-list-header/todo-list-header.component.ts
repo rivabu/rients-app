@@ -1,7 +1,5 @@
 import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {Todo} from "../todo";
-import {Router} from "@angular/router";
-import {AuthService} from "../../sign-in/auth.service";
 
 @Component({
   selector: 'app-todo-list-header',

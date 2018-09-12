@@ -25,7 +25,7 @@ server.post('/sign-in', (req, res) => {
   if (username === 'demo' && password === 'demo') {
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify({
-      name: 'SitePoint Reader',
+      name: 'Rients van Buren',
       token: jwtToken
     }));
   } else {

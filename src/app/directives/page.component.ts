@@ -6,9 +6,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageComponent implements OnInit {
 
-  public condition: boolean = false;
-  public username: string = 'rivabu';
-  public title: string = 'zomaar een title';
   constructor() { }
 
   ngOnInit() {
