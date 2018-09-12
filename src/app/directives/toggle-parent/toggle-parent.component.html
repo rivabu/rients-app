@@ -1,0 +1,21 @@
+<!-- myIf -->
+<toggle [name]="'MyIfDirective'" (toggle)="onToggle($event)" [clientListener]="parentSubject">
+  <div *myIf="condition">Hello {{username}}</div>
+  <button class="btn btn-primary" (click)="condition = !condition">Click Myif Directive</button>
+  <br/>
+  <hr/>
+</toggle>
+
+<!-- appchange background color-->
+<toggle [name]="'BGColorDirective'" (toggle)="onToggle($event)" [clientListener]="parentSubject">
+  <div appChbgcolor>
+    <h3>Rients van Buren + {{title}}</h3>
+  </div>
+  <hr/>
+</toggle>
+<!-- myStyle-->
+
+<toggle [name]="'MyStyleDirective'" (toggle)="onToggle($event)" [clientListener]="parentSubject">
+  <mystyle></mystyle>
+</toggle>
+

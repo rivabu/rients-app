@@ -1,0 +1,7 @@
+<div *myIf="isShow">
+  <ng-content></ng-content>
+  <button type="button" class="btn btn-link" (click)="isShow = !isShow">Hide {{name}}</button>
+</div>
+<div *myIf="!isShow">
+  <button type="button" class="btn btn-link" (click)="isShow = !isShow; openToggle()">Show {{name}}</button>
+</div>
