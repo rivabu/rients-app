@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren: '../app/directives/directives.module#DirectivesModule'
   },
   {
+    path: 'forms',
+    loadChildren: '../app/forms/myforms.module#MyFormsModule'
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
