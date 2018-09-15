@@ -1,16 +1,6 @@
 {
   "todos": [
     {
-      "title": "aaa",
-      "complete": false,
-      "id": 4
-    },
-    {
-      "title": "bbb",
-      "complete": true,
-      "id": 5
-    },
-    {
       "title": "naar bed",
       "complete": false,
       "id": 6
