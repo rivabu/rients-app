@@ -15,5 +15,15 @@
       "complete": false,
       "id": 8
     }
+  ],
+  "users": [
+    {
+      "name": "Rients",
+      "email": "rientsvanburen@gmail.com"
+    },
+    {
+      "name": "Suzan",
+      "email": "aaa@bbb.com"
+    }
   ]
 }

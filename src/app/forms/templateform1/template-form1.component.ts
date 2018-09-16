@@ -3,10 +3,10 @@ import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'forms1',
-  templateUrl: './forms1.component.html',
+  templateUrl: './template-form1.component.html',
   styles: []
 })
-export class Forms1Component implements OnInit {
+export class TemplateForm1Component implements OnInit {
 
   public companyForm: FormGroup;
   constructor() { }

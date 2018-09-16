@@ -6,6 +6,8 @@ import {FormGroup} from '@angular/forms';
   templateUrl: './formspage.component.html',
 })
 export class FormPageComponent implements OnInit {
+  ngOnInit(): void {
+  }
 
 
 

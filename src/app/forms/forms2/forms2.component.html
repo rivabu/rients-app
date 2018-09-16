@@ -1,3 +1,48 @@
 <p>
-  forms2 works!
+  The other kind of form you can create is a reactive form, which allows you to explicitly create control objects for
+  the form fields yourself. This approach is a good choice when you are building a more complex form and you want to
+  have more control over its behavior.
 </p>
+<form [formGroup]="accountForm" (ngSubmit)="signup()">
+  <div class="form-group row">
+    <div class="col-md-3" for="username">Email</div>
+    <div class="col-md-3">
+      <input type="text"
+             class="form-control"
+             id="email"
+             formControlName="email">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-3" for="username">Password</div>
+    <div class="col-md-3">
+      <input type="text"
+             id="password"
+             class="form-control"
+             formControlName="password">
+    </div>
+  </div>
+  <div class="form-group row col-md-6">
+    <div *ngIf="email.touched && email.errors">
+      <div class="alert alert-danger" *ngIf="email.errors.required">
+        The email is required
+      </div>
+    </div>
+    <div *ngIf="email.errors">
+      <div class="alert alert-danger" *ngIf="email.errors.pattern">
+        The email is not valid
+      </div>
+    </div>
+    <div *ngIf="email.errors">
+      <div class="alert alert-danger" *ngIf="email.errors.duplicateEmail">
+        The email is already in use
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit"
+          [disabled]="!accountForm.valid">Sign up
+  </button>
+
+</form>

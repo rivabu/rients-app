@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {Forms1Component} from "./forms1/forms1.component";
 import {FormPageComponent} from "./formspage.component";
 import {Forms2Component} from "./forms2/forms2.component";
+import {TemplateForm1Component} from "./templateform1/template-form1.component";
 
 const formsRoutes: Routes = [
   {
@@ -11,12 +11,12 @@ const formsRoutes: Routes = [
     children: [
       {
         path: '',
-        component: Forms1Component,
+        component: TemplateForm1Component,
         pathMatch: 'full'
       },
       {
-        path: 'form1',
-        component: Forms1Component
+        path: 'templateform1',
+        component: TemplateForm1Component
         // pathMatch: 'full'
       },
       {
