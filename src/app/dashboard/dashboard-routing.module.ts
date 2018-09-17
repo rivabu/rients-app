@@ -6,7 +6,6 @@ import {CanActivateTodoGuard} from "../todos/can-activate-todo.guard";
 import {TodosResolver} from "../todos/todos.resolver";
 import {PageComponent} from "../directives/page.component";
 import {PageNotFoundComponent} from "../shared/components/page-not-found/page-not-found.component";
-import {FormPageComponent} from "../forms/formspage.component";
 
 const dashboardRoutes: Routes = [
   {
@@ -28,7 +27,7 @@ const dashboardRoutes: Routes = [
       },
       {
         path: 'forms',
-        loadChildren: '../app/forms/myforms.module#MyFormsModule'
+        loadChildren: '../forms/myforms.module#MyFormsModule'
       },
       {
         path: '**',

@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Component, Inject, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserInfoService} from "./userInfo.service";
-import {Customvalidators} from "./Customvalidators";
+import {CustomValidators} from "./custom-validators";
 
 @Component({
   selector: 'app-forms2',
@@ -10,22 +10,27 @@ import {Customvalidators} from "./Customvalidators";
 })
 export class Forms2Component implements OnInit {
 
-  accountForm = new FormGroup({
-    email: new FormControl("",
+  // ook kan een validator aan een formgroup gehangen worden..
+  accountForm: FormGroup;
+  emailControl: FormControl = new FormControl("",
+    [Validators.required,
+      Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')],
+    [CustomValidators.checkDuplicateEmail(this.serverService)]
+  );
+  passwordControl: FormControl = new FormControl("",
+    [Validators.required, Validators.minLength(3)]);
 
-      [Validators.required,
-        Validators.pattern('[a-zA-z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+')]
-      ,
-      [Customvalidators.checkDuplicateEmail(this.serverService)]),
-    password: new FormControl("",
-      [Validators.required,
-        Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$')])
-  });
-
-
+  remarkControl: FormControl = new FormControl("",
+    [Validators.required]);
   //, updateOn: 'blur'
 
-  constructor(private serverService: UserInfoService) {
+
+  constructor(private serverService: UserInfoService, @Inject(FormBuilder) formBuilder: FormBuilder) {
+
+    this.accountForm = formBuilder.group({
+      email: this.emailControl,
+      password: this.passwordControl,
+      remark: this.remarkControl})
   }
 
   ngOnInit() {
@@ -36,8 +41,19 @@ export class Forms2Component implements OnInit {
     return this.accountForm.get("email");
   }
 
+  get password() {
+    return this.accountForm.get("password");
+  }
+
+  get remark() {
+    return this.accountForm.get("remark");
+  }
+
+
   signup() {
+    console.log(this.accountForm.get("remark").errors);
     console.log(this.accountForm.value);
+    //console.log(this.accountForm.errors);
     alert('The form was submitted');
     this.accountForm.reset();
   }
