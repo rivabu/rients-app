@@ -7,11 +7,12 @@ import {ChangeBgColorDirective} from "./change-bg-color-directive";
 import {MyStyleComponent} from "./mystyle.component";
 import { ToggleComponent } from './toggle/toggle.component';
 import { ToggleParentComponent } from './toggle-parent/toggle-parent.component';
+import { ClickObserverComponent } from './click-observer/click-observer.component';
 
 @NgModule({
   imports: [
     CommonModule, DirectivesRoutingModule, SharedModule
   ],
-  declarations: [PageComponent, MyStyleComponent, ChangeBgColorDirective, ToggleComponent, ToggleParentComponent]
+  declarations: [PageComponent, MyStyleComponent, ChangeBgColorDirective, ToggleComponent, ToggleParentComponent, ClickObserverComponent]
 })
 export class DirectivesModule { }
