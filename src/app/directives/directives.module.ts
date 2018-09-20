@@ -8,11 +8,14 @@ import {MyStyleComponent} from "./mystyle.component";
 import { ToggleComponent } from './toggle/toggle.component';
 import { ToggleParentComponent } from './toggle-parent/toggle-parent.component';
 import { ClickObserverComponent } from './click-observer/click-observer.component';
+import { NodeComponent } from './node/node.component';
+import {InnerComponent} from "./inner-outer/inner.component";
+import {OuterComponent} from "./inner-outer/outer.component";
 
 @NgModule({
   imports: [
     CommonModule, DirectivesRoutingModule, SharedModule
   ],
-  declarations: [PageComponent, MyStyleComponent, ChangeBgColorDirective, ToggleComponent, ToggleParentComponent, ClickObserverComponent]
+  declarations: [PageComponent, MyStyleComponent, ChangeBgColorDirective, ToggleComponent, ToggleParentComponent, ClickObserverComponent, NodeComponent, InnerComponent, OuterComponent]
 })
 export class DirectivesModule { }

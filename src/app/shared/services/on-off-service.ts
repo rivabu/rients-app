@@ -6,25 +6,29 @@ import {BehaviorSubject, Observable} from 'rxjs';
 })
 
 export class OnOffService {
-  private switchManager_:BehaviorSubject<Switch>
+  private switchManager_: BehaviorSubject<Switch>
     = new BehaviorSubject(Switch.Off);
-  private switch_:Switch;
-  switchChange:Observable<Switch>;
+  private switch_: Switch;
+  switchChange: Observable<Switch>;
 
 
   constructor() {
     this.switchChange = this.switchManager_.asObservable();
   }
-  setOn():void {
+
+  setOn(): void {
     this.setAuthState_(Switch.On);
   }
-  setOff():void {
+
+  setOff(): void {
     this.setAuthState_(Switch.Off);
   }
-  emitNewState():void {
+
+  emitNewState(): void {
     this.switchManager_.next(this.switch_);
   }
-  private setAuthState_(newState:Switch):void {
+
+  private setAuthState_(newState: Switch): void {
     this.switch_ = newState;
     this.emitNewState();
   }
