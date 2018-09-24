@@ -8,6 +8,16 @@
         (remove)="onRemoveTodo($event)">
       </app-todo-list-item>
     </div>
+    <div class="form-group row">
+      <div class="col-md-3"></div>
+      <div class="col-md-4">
+        <div *ngFor="let todo of todos" [class.completed]="todo.complete">
+          <a [routerLink]="[todo.id, {complete: todo.complete}]">
+            Todo {{todo.id}}
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

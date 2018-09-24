@@ -9,6 +9,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SharedModule} from "../shared/shared.module";
 import {RouterModule} from "@angular/router";
 import {TodosRoutingModule} from "./todos-routing.module";
+import { TodoDetailComponent } from './todo-detail/todo-detail.component';
+import { TodoMainPageComponent } from './todo-main-page/todo-main-page.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import {TodosRoutingModule} from "./todos-routing.module";
     TodoListComponent,
     TodoListItemComponent,
     TodoListFooterComponent,
-    TodosComponent],
+    TodosComponent,
+    TodoDetailComponent,
+    TodoMainPageComponent],
   exports: []
 })
 export class TodosModule { }

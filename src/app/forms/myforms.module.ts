@@ -7,6 +7,8 @@ import {FormsRoutingModule} from "./forms-routing.module";
 import { Forms2Component } from './forms2/forms2.component';
 import {TemplateForm1Component} from "./templateform1/template-form1.component";
 import {SharedModule} from "../shared/shared.module";
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import {APIService} from "./api-service";
 
 @NgModule({
   imports: [
@@ -15,6 +17,9 @@ import {SharedModule} from "../shared/shared.module";
     ReactiveFormsModule,
     FormsRoutingModule, SharedModule
   ],
-  declarations: [FormPageComponent, NavbarComponent, TemplateForm1Component, Forms2Component]
+  providers: [
+    APIService
+  ],
+  declarations: [FormPageComponent, NavbarComponent, TemplateForm1Component, Forms2Component, AutocompleteComponent]
 })
 export class MyFormsModule { }

@@ -2,8 +2,6 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {TodosComponent} from "../todos/todos/todos.component";
-import {CanActivateTodoGuard} from "../todos/can-activate-todo.guard";
-import {TodosResolver} from "../todos/todos.resolver";
 import {PageComponent} from "../directives/page.component";
 import {PageNotFoundComponent} from "../shared/components/page-not-found/page-not-found.component";
 
@@ -13,13 +11,10 @@ const dashboardRoutes: Routes = [
     component: DashboardComponent,
     // pathMatch: 'full',
     children: [
+
       {
-        path: '',
-        component: TodosComponent,
-        canActivate: [CanActivateTodoGuard],
-        resolve: {
-          todosFromResolver: TodosResolver
-        },
+        path: 'todos',
+        loadChildren: '../todos/todos.module#TodosModule'
       },
       {
         path: 'directives',
@@ -28,6 +23,10 @@ const dashboardRoutes: Routes = [
       {
         path: 'forms',
         loadChildren: '../forms/myforms.module#MyFormsModule'
+      },
+      {
+        path: '',
+        redirectTo: 'todos'
       },
       {
         path: '**',

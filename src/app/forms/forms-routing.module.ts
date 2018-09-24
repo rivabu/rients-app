@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormPageComponent} from "./formspage.component";
 import {Forms2Component} from "./forms2/forms2.component";
 import {TemplateForm1Component} from "./templateform1/template-form1.component";
+import {AutocompleteComponent} from "./autocomplete/autocomplete.component";
 
 const formsRoutes: Routes = [
   {
@@ -23,6 +24,10 @@ const formsRoutes: Routes = [
         path: 'form2',
         component: Forms2Component
         // pathMatch: 'full'
+      },
+      {
+        path: 'autocomplete',
+        component: AutocompleteComponent
       }]
     //pathMatch: 'full'
   },
