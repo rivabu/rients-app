@@ -1,19 +1,9 @@
 {
   "todos": [
     {
-      "title": "naar bed",
+      "title": "OpaqueTokens inbouwen",
       "complete": false,
-      "id": 6
-    },
-    {
-      "title": "aaa",
-      "complete": true,
-      "id": 7
-    },
-    {
-      "title": "tyu",
-      "complete": false,
-      "id": 8
+      "id": 9
     }
   ],
   "users": [

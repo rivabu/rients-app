@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {LOGO_URL} from "../shared/logo-url.token";
+import {Inject} from '@angular/core';
 
 @Component({
   selector: 'app-page',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageComponent implements OnInit {
 
-  constructor() { }
+  logoUrl: string;
+
+  constructor(@Inject(LOGO_URL) private logoUrl_) {
+    this.logoUrl = logoUrl_;
+  }
 
   ngOnInit() {
   }
