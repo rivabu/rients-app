@@ -1,5 +1,7 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
+var path = require('path')
+var express = require('express')
 
 //Laad hier de todo's in
 const router = jsonServer.router('db.json');
@@ -33,13 +35,17 @@ server.post('/sign-in', (req, res) => {
   }
 });
 
+server.use('/static', express.static(path.join(__dirname, 'public')))
+
+
 // Protect other routes
 server.use((req, res, next) => {
   if (isAuthorized(req)) {
     console.log('Access granted');
     next();
   } else {
-    console.log('Access denied, invalid JWT');
+    console.log('Access denied, invalid JWT, uri = ' + req.url);
+
     res.sendStatus(401);
   }
 });
