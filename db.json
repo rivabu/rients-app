@@ -2,8 +2,33 @@
   "todos": [
     {
       "title": "OpaqueTokens inbouwen",
-      "complete": false,
+      "complete": true,
       "id": 9
+    },
+    {
+      "title": "webpack verder afronden",
+      "complete": false,
+      "id": 10
+    },
+    {
+      "title": "samenvatting maken",
+      "complete": false,
+      "id": 11
+    },
+    {
+      "title": "hoofdstuk over testen lezen",
+      "complete": false,
+      "id": 12
+    },
+    {
+      "title": "alles nog een keer langslopen",
+      "complete": false,
+      "id": 13
+    },
+    {
+      "title": "videos van Udemy bekijken",
+      "complete": false,
+      "id": 14
     }
   ],
   "users": [

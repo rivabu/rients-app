@@ -1,17 +1,41 @@
-const webpack = require("webpack");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const {AngularCompilerPlugin} = require('@ngtools/webpack');
 
-module.exports = {
-  entry: "../todo-app/dist/out-tsc/src/main.js",
-  devtool: "source-map",
-  output: {
-    path: "/Users/rivabu/aaa/angular5/todo-app/public",
-    filename: "bundle.js"
-  },
-  optimization: {
-    minimize: false,
-    minimizer: [new UglifyJsPlugin({
-      include: /\.min\.js$/
-    })]
-  }
+
+module.exports = function () {
+  return {
+    entry: './src/main.ts',
+    output: {
+      path: __dirname + '/public',
+      filename: 'app.js'
+    },
+    resolve: {
+      extensions: ['.ts', '.js']
+    },
+    module: {
+      rules: [
+        {test: /\.ts$/, loaders: ['@ngtools/webpack']},
+        {test: /\.css$/, loader: 'raw-loader'},
+        {test: /\.html$/, loader: 'raw-loader'}
+      ]
+    },
+
+    plugins: [
+      new CopyWebpackPlugin([
+        {from: 'src/assets', to: 'assets'}
+      ]),
+      // new HtmlWebpackPlugin({
+      //   template: __dirname + '/src/index.html',
+      //   output: __dirname + '/public',
+      //   inject: 'head'
+      // }),
+      new AngularCompilerPlugin({
+        tsConfigPath: './tsconfig.json',
+        entryModule: './src/app/app.module#AppModule',
+        sourceMap: true
+      })
+
+    ]
+  };
 };

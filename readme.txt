@@ -33,3 +33,4 @@ nu nmp install webpack-cli -g
 nu webpack
 zorg ervoor dat er 1 webpack is..
 
+webpack --mode=production --display-error-details
