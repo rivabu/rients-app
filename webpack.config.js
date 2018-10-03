@@ -25,11 +25,12 @@ module.exports = function () {
       new CopyWebpackPlugin([
         {from: 'src/assets', to: 'assets'}
       ]),
-      // new HtmlWebpackPlugin({
-      //   template: __dirname + '/src/index.html',
-      //   output: __dirname + '/public',
-      //   inject: 'head'
-      // }),
+      new HtmlWebpackPlugin({  // Also generate a test.html
+        filename: __dirname + '/public/index2.html',
+        template: __dirname + '/src/index.html',
+        chunksSortMode: 'none', // solves cyclic dependency
+        inject: 'head'
+      }),
       new AngularCompilerPlugin({
         tsConfigPath: './tsconfig.json',
         entryModule: './src/app/app.module#AppModule',
