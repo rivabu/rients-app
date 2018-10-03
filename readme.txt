@@ -25,11 +25,16 @@ ng generate component forms/navbar --spec false -is
 
 === problemen met webpack ===
 
-command npm ls webpack: geeft weer welke versies van webpack nu  gebruikt wordt
+command npm ls webpack: geeft weer welke versies van webpack nu gebruikt wordt
 $ npm ls webpack
 rients-app@0.0.0 /Users/rivabu/aaa/angular5/rients-app
 └─┬ @angular-devkit/build-angular@0.8.3
   └── webpack@4.20.2
+
+installeren global package
+$ npm install -g typescript
+installeren nieuw package en de package.json meteen updaten
+$ npm install concurrently --save-dev
 
 check outdated
 $ npm outdated
@@ -38,13 +43,15 @@ Package                      Current  Wanted   Latest  Location
 @types/node                    8.9.5   8.9.5  10.11.3  rients-app
 codelyzer                      4.2.1   4.2.1    4.4.4  rients-app
 
-nu $ npm remove webpack -g
-nu $ npm install webpack -g
-nu $ nmp install webpack-cli -g
-nu $ webpack
+$ npm remove webpack -g
+$ npm install webpack -g
+$ nmp install webpack-cli -g
+$ webpack
 zorg ervoor dat er 1 webpack is..
 
 ===bouwen met webpack===
 $ webpack --mode=production --display-error-details
 
 
+===runnen scripts vanuit de package json===
+$ npm run <command>
