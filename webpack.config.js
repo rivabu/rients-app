@@ -26,7 +26,7 @@ module.exports = function () {
         {from: 'src/assets', to: 'assets'}
       ]),
       new HtmlWebpackPlugin({  // Also generate a test.html
-        filename: __dirname + '/public/index2.html',
+        filename: __dirname + '/public/index.html',
         template: __dirname + '/src/index.html',
         chunksSortMode: 'none', // solves cyclic dependency
         inject: 'head'
