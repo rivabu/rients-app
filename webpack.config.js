@@ -25,11 +25,10 @@ module.exports = function () {
       new CopyWebpackPlugin([
         {from: 'src/assets', to: 'assets'}
       ]),
-      new HtmlWebpackPlugin({  // Also generate a test.html
+      new HtmlWebpackPlugin({
         filename: __dirname + '/public/index.html',
         template: __dirname + '/src/index.html',
-        chunksSortMode: 'none', // solves cyclic dependency
-        inject: 'head'
+        chunksSortMode: 'none' // solves cyclic dependency
       }),
       new AngularCompilerPlugin({
         tsConfigPath: './tsconfig.json',

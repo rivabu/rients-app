@@ -21,7 +21,7 @@
 //     const app = fixture.debugElement.componentInstance;
 //     expect(app).toBeTruthy();
 //   }));
-//   // it(`should have as title 'todo-app'`, async(() => {
+//   // it(`should have as title 'rients-app'`, async(() => {
 //   //   const fixture = TestBed.createComponent(AppComponent);
 //   //   const app = fixture.debugElement.componentInstance;
 //   //   expect(app.newTodo instanceof Todo).toBeTruthy();
