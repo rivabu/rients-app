@@ -19,7 +19,8 @@ anders window
 node json-server.js
 
 ===ng-generatie===
-ng generate component directives directives/toggle --nospec
+ng generate component directives/magic-eight-ball
+ng generate service directives/magic-eight-ball
 ng generate component directives/toggleParent --spec false -is
 ng generate component forms/navbar --spec false -is
 

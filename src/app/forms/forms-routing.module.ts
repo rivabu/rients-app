@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {FormPageComponent} from "./formspage.component";
-import {Forms2Component} from "./forms2/forms2.component";
-import {TemplateForm1Component} from "./templateform1/template-form1.component";
-import {AutocompleteComponent} from "./autocomplete/autocomplete.component";
+import {FormPageComponent} from './formspage.component';
+import {Forms2Component} from './forms2/forms2.component';
+import {TemplateForm1Component} from './templateform1/template-form1.component';
+import {AutocompleteComponent} from './autocomplete/autocomplete.component';
 
 const formsRoutes: Routes = [
   {

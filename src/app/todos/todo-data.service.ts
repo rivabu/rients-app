@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Todo} from './todo';
-import {Observable} from "rxjs";
-import {TodoApiService} from "./todo-api.service";
+import {Observable} from 'rxjs';
+import {TodoApiService} from './todo-api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +19,11 @@ export class TodoDataService {
     return this.api.deleteTodoById(id);
   }
 
-  updateTodoById(todo: Todo): Observable<Todo>  {
+  updateTodoById(todo: Todo): Observable<Todo> {
     return this.api.updateTodo(todo);
   }
 
-  getTodoById(id: number): Observable<Todo>  {
+  getTodoById(id: number): Observable<Todo> {
     return this.api.getTodoById(id);
   }
 

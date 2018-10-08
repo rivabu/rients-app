@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class SessionService {
     console.log('new instance of SessionService created');
   }
 
-  public destroy() : void {
+  public destroy(): void {
     this.accessToken = null;
     this.name = null;
   }

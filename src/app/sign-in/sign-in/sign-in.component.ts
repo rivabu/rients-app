@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../auth.service";
-import {Router} from "@angular/router";
-import {SignInApiService} from "../sign-in-api.service";
-import {OnDestroy} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../auth.service';
+import {Router} from '@angular/router';
+import {SignInApiService} from '../sign-in-api.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -56,15 +55,15 @@ export class SignInComponent implements OnInit {
           );
           // todos = the url!!\
           let url = '/dashboard';
-;          console.log('routing to: ' + url);
+          ;console.log('routing to: ' + url);
           this.router.navigate([url]);
           //this.router.navigateByUrl(url);
 
         },
-      (error) => {
+        (error) => {
           this.isBusy = false;
           this.hasFailed = true;
-      }
+        }
       );
   }
 

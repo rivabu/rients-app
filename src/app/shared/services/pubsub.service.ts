@@ -51,7 +51,7 @@ export class PubSubService {
     if (this.subjects[name]) {
       this.subjects[name].unsubscribe();
       delete this.subjects[name];
-      console.log('disposed: ' + name + ' remaining: ' +  Object.keys(this.subjects).length);
+      console.log('disposed: ' + name + ' remaining: ' + Object.keys(this.subjects).length);
     }
   }
 
@@ -68,7 +68,6 @@ export class PubSubService {
     }
     this.subjects = {};
   }
-
 
 
 }

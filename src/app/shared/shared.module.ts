@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MyErrorDirective} from "./directives/my-error.directive";
-import {MyIfDirective} from "./directives/my-if.directive";
-import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
-import {MaxWordCountValidator} from "./directives/max-word-count.directive";
-import {ClickOnOffComponent} from "./click-on-off/click-on-off.component";
-import {LOGO_URL} from "./logo-url.token";
+import {MyErrorDirective} from './directives/my-error.directive';
+import {MyIfDirective} from './directives/my-if.directive';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {MaxWordCountValidator} from './directives/max-word-count.directive';
+import {ClickOnOffComponent} from './click-on-off/click-on-off.component';
+import {LOGO_URL} from './logo-url.token';
 
 @NgModule({
   imports: [

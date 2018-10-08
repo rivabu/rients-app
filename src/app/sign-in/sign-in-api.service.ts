@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {catchError, map} from "rxjs/operators";
-import {environment} from "../../environments/environment";
-import {SessionService} from "../shared/services/session.service";
-import {GenericService} from "../shared/generic.service";
+import {HttpClient} from '@angular/common/http';
+import {catchError, map} from 'rxjs/operators';
+import {environment} from '../../environments/environment';
+import {SessionService} from '../shared/services/session.service';
+import {GenericService} from '../shared/generic.service';
 
-// import {HttpClient} from "@angular/common/http";
+// import {HttpClient} from '@angular/common/http';
 
 const API_URL = environment.apiUrl;
 

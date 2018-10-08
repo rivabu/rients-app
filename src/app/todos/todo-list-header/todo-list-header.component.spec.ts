@@ -1,10 +1,8 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TodoListHeaderComponent } from './todo-list-header.component';
-import { FormsModule } from '@angular/forms';
+import {TodoListHeaderComponent} from './todo-list-header.component';
+import {FormsModule} from '@angular/forms';
 
 describe('TodoListHeaderComponent', () => {
   let component: TodoListHeaderComponent;
@@ -15,7 +13,7 @@ describe('TodoListHeaderComponent', () => {
       imports: [
         FormsModule
       ],
-      declarations: [ TodoListHeaderComponent ]
+      declarations: [TodoListHeaderComponent]
     })
       .compileComponents();
   }));

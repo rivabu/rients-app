@@ -1,4 +1,4 @@
-import {Directive, Input, OnChanges, OnInit, TemplateRef, ViewContainerRef} from '@angular/core';
+import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
 
 @Directive({
   selector: '[myIf]'
@@ -7,13 +7,14 @@ export class MyIfDirective {
 
   constructor(
     private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef
-  ) { }
+  ) {
+  }
 
   @Input() set myIf(condition: boolean) {
     if (condition) {
-     this.viewContainer.createEmbeddedView(this.templateRef);
+      this.viewContainer.createEmbeddedView(this.templateRef);
     } else {
-     this.viewContainer.clear();
+      this.viewContainer.clear();
     }
-}
+  }
 }

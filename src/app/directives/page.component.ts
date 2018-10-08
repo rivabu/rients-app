@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {LOGO_URL} from "../shared/logo-url.token";
-import {Inject} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {LOGO_URL} from '../shared/logo-url.token';
 
 @Component({
   selector: 'app-page',

@@ -1,6 +1,6 @@
-import {throwError} from "rxjs";
-import {HttpHeaders} from "@angular/common/http";
-import {SessionService} from "./services/session.service";
+import {throwError} from 'rxjs';
+import {HttpHeaders} from '@angular/common/http';
+import {SessionService} from './services/session.service';
 
 export class GenericService {
   constructor(private session: SessionService) {
@@ -15,7 +15,7 @@ export class GenericService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.session.accessToken
     });
-    return { headers};
+    return {headers};
 
   }
 

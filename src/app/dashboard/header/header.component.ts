@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../sign-in/auth.service";
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../sign-in/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'dashboard-header',
@@ -8,7 +8,8 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router) {
+  }
 
   ngOnInit() {
   }

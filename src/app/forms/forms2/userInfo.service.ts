@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {map} from "rxjs/operators";
-import {GenericService} from "../../shared/generic.service";
-import {environment} from "../../../environments/environment";
-import {SessionService} from "../../shared/services/session.service";
+import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
+import {GenericService} from '../../shared/generic.service';
+import {environment} from '../../../environments/environment';
+import {SessionService} from '../../shared/services/session.service';
 
 const API_URL = environment.apiUrl;
 
@@ -48,9 +48,9 @@ export class UserInfoService extends GenericService {
             //
             //return response.map(users => response.filter(user => { console.log('user email: '  + user.email); user.email === email}))
 
-              //.map(response => !response.length)
+            //.map(response => !response.length)
           }
-          )
+        )
       )
   }
 

@@ -1,5 +1,4 @@
-import {Directive, ElementRef, HostListener, Renderer} from '@angular/core';
-import {HostBinding} from '@angular/core';
+import {Directive, ElementRef, HostBinding, HostListener, Renderer} from '@angular/core';
 
 @Directive({
   selector: '[appChbgcolor]'
@@ -8,22 +7,24 @@ import {HostBinding} from '@angular/core';
 https://dzone.com/articles/what-are-hostbinding-and-hostlistener-in-angular
  */
 export class ChangeBgColorDirective {
+  // name of the host element property which value we want to assign in the directive.
+  @HostBinding('style.border') border: string;
+
+  // In Angular, the @HostListener() function decorator makes it super easy to
+
   constructor(private el: ElementRef, private renderer: Renderer) {
   }
 
-  // In Angular, the @HostListener() function decorator makes it super easy to
   // handle events raised in the host element inside the directive class.
   @HostListener('click') onClick() {
     window.alert('Host Element Clicked');
   }
 
+  // The @HostBinding() decorator takes one parameter, the
+
   @HostListener('mouseleave') onMouseLeave() {
     this.ChangeBgColor('black');
   }
-
-  // The @HostBinding() decorator takes one parameter, the
-  // name of the host element property which value we want to assign in the directive.
-  @HostBinding('style.border') border: string;
 
   @HostListener('mouseover') onMouseOver() {
     this.ChangeBgColor('red');

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {TodoDataService} from "../todo-data.service";
-import {Todo} from "../todo";
-import {ActivatedRoute} from "@angular/router";
-import {map} from "rxjs/operators";
+import {TodoDataService} from '../todo-data.service';
+import {Todo} from '../todo';
+import {ActivatedRoute} from '@angular/router';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-todos',
@@ -30,7 +30,7 @@ export class TodosComponent implements OnInit {
 
   onAddTodo(todo: Todo) {
     this.todoDataService.addTodo(todo).subscribe((newTodo) => {
-      this.todos = this.todos.concat(newTodo)
+      this.todos = this.todos.concat(newTodo);
     });
   }
 
@@ -42,11 +42,9 @@ export class TodosComponent implements OnInit {
   onRemoveTodo(todo: Todo) {
     this.todoDataService.deleteTodoById(todo.id).subscribe((_) => {
       // bewaar alles dat niet matched met todo.id
-      this.todos = this.todos.filter((t) => t.id !== todo.id)
-    })
-  };
-
-
+      this.todos = this.todos.filter((t) => t.id !== todo.id);
+    });
+  }
 
 
 }

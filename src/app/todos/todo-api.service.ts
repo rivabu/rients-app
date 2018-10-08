@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {catchError, map} from "rxjs/operators";
+import {HttpClient} from '@angular/common/http';
+import {catchError, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-import {environment} from "../../environments/environment";
-import {SessionService} from "../shared/services/session.service";
-import {Todo} from "./todo";
-import {GenericService} from "../shared/generic.service";
+import {environment} from '../../environments/environment';
+import {SessionService} from '../shared/services/session.service';
+import {Todo} from './todo';
+import {GenericService} from '../shared/generic.service';
 
 const API_URL = environment.apiUrl;
 
@@ -82,7 +82,6 @@ export class TodoApiService extends GenericService {
       catchError(this.handleError)
     )
   }
-
 
 
 }

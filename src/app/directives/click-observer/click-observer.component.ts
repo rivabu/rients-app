@@ -7,7 +7,7 @@ import {fromEvent, Observable} from 'rxjs';
     <button #btn>
       Emit event!
     </button>
-    <p *ngFor="let click of clicks; let i = index">
+    <p *ngFor='let click of clicks; let i = index'>
       {{i}}: {{click}}
     </p>
   `

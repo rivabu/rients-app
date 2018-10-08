@@ -4,11 +4,11 @@ import {InnerComponent} from './inner.component';
 @Component({
   selector: 'outer',
   template: `
-    <button (click)="add()">Moar</button>
-    <button (click)="remove()">Less</button>
-    <button (click)="shuffle()">Shuffle</button>
-    <inner *ngFor="let i of list"
-           val="{{i}}">
+    <button (click)='add()'>Moar</button>
+    <button (click)='remove()'>Less</button>
+    <button (click)='shuffle()'>Shuffle</button>
+    <inner *ngFor='let i of list'
+           val='{{i}}'>
     </inner>
     <p>Value of last: {{lastVal| json}}</p>
   `
@@ -16,22 +16,23 @@ import {InnerComponent} from './inner.component';
 export class OuterComponent implements AfterViewInit {
   @ViewChildren(InnerComponent) innerComponents:
     QueryList<InnerComponent>;
-  list:Array<number> = [];
-  lastVal:number;
+  list: Array<number> = [];
+  lastVal: number;
 
-  constructor(private changeDetectorRef_:ChangeDetectorRef) {}
+  constructor(private changeDetectorRef_: ChangeDetectorRef) {
+  }
 
-  add():void {
+  add(): void {
     this.list.push(this.list.length)
   }
 
-  remove():void {
+  remove(): void {
     this.list.pop();
   }
 
-  shuffle():void {
+  shuffle(): void {
     // simple assignment shuffle
-    this.list = this.list.sort(() => (4*Math.random()>2)?1:-1);
+    this.list = this.list.sort(() => (4 * Math.random() > 2) ? 1 : -1);
   }
 
   ngAfterViewInit() {

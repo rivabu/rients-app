@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {DashboardComponent} from "./dashboard/dashboard.component";
-import {TodosComponent} from "../todos/todos/todos.component";
-import {PageComponent} from "../directives/page.component";
-import {PageNotFoundComponent} from "../shared/components/page-not-found/page-not-found.component";
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {TodosComponent} from '../todos/todos/todos.component';
+import {PageComponent} from '../directives/page.component';
+import {PageNotFoundComponent} from '../shared/components/page-not-found/page-not-found.component';
 
 const dashboardRoutes: Routes = [
   {

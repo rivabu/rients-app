@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {APIService} from "../api-service";
+import {APIService} from '../api-service';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'auto-complete',
   template: `
-    <input [formControl]="queryField">
-    <p *ngFor="let result of results">{{result}}</p>
+    <input [formControl]='queryField'>
+    <p *ngFor='let result of results'>{{result}}</p>
   `
 })
 export class AutocompleteComponent {

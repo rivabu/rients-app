@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
-import {SessionService} from "../../shared/services/session.service";
+import {SessionService} from '../../shared/services/session.service';
 
 @Component({
   selector: 'toggle-parent',
@@ -13,9 +13,10 @@ export class ToggleParentComponent implements OnInit {
   public title: string = 'zomaar een title';
 
   // publish/subscribe middels subjects, subject is shared between parent and childs
-  parentSubject:Subject<any> = new Subject();
+  parentSubject: Subject<any> = new Subject();
 
-  constructor(private session: SessionService) { }
+  constructor(private session: SessionService) {
+  }
 
   ngOnInit() {
     this.username = this.session.name;

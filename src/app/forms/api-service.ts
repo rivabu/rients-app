@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {delay, map, debounceTime} from 'rxjs/operators';
-import {GenericService} from "../shared/generic.service";
-import {SessionService} from "../shared/services/session.service";
-import {environment} from "../../environments/environment";
+import {debounceTime, delay, map} from 'rxjs/operators';
+import {GenericService} from '../shared/generic.service';
+import {SessionService} from '../shared/services/session.service';
+import {environment} from '../../environments/environment';
 
 const API_URL = environment.apiUrl;
 

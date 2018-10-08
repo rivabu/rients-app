@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {TodosComponent} from "./todos/todos.component";
-import {CanActivateTodoGuard} from "./can-activate-todo.guard";
-import {TodosResolver} from "./todos.resolver";
-import {PageNotFoundComponent} from "../shared/components/page-not-found/page-not-found.component";
-import {TodoDetailComponent} from "./todo-detail/todo-detail.component";
-import {TodoMainPageComponent} from "./todo-main-page/todo-main-page.component";
+import {TodosComponent} from './todos/todos.component';
+import {CanActivateTodoGuard} from './can-activate-todo.guard';
+import {TodosResolver} from './todos.resolver';
+import {PageNotFoundComponent} from '../shared/components/page-not-found/page-not-found.component';
+import {TodoDetailComponent} from './todo-detail/todo-detail.component';
+import {TodoMainPageComponent} from './todo-main-page/todo-main-page.component';
 
 const todoRoutes: Routes = [
   {

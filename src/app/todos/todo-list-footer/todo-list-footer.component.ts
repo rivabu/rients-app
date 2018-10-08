@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Todo} from "../todo";
+import {Todo} from '../todo';
 
 @Component({
   selector: 'app-todo-list-footer',
@@ -8,11 +8,12 @@ import {Todo} from "../todo";
 })
 export class TodoListFooterComponent implements OnInit {
 
-  constructor() { }
+  // door de input kan het geinject worden
+  @Input() todos: Todo[];
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
-  // door de input kan het geinject worden
-  @Input() todos: Todo[];
 }

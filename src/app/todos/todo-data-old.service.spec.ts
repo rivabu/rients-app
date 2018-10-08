@@ -1,8 +1,8 @@
 /* tslint:disable:no-unused-variable */
 
-import {TestBed, async, inject} from '@angular/core/testing';
+import {inject, TestBed} from '@angular/core/testing';
 import {Todo} from './todo';
-import {TodoDataOldService} from "./todo-data-old.service";
+import {TodoDataOldService} from './todo-data-old.service';
 
 describe('TodoDataOldService', () => {
   beforeEach(() => {

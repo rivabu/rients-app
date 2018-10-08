@@ -5,5 +5,5 @@ import {Component, Input} from '@angular/core';
   template: `<p>{{val}}`
 })
 export class InnerComponent {
-  @Input() val:number;
+  @Input() val: number;
 }

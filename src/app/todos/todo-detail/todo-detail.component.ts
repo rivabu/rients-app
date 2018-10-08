@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
 import {Observable} from 'rxjs';
-import {Params} from '@angular/router';
 
 @Component({
   selector: 'app-todo-detail',
@@ -22,7 +21,6 @@ export class TodoDetailComponent implements OnInit {
         console.log(params.get('todoId'));
         this.todoId = parseInt(params.get('todoId'));
       }
-
     )
   }
 

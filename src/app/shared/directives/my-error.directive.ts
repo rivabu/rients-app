@@ -6,7 +6,7 @@ import {Directive, ElementRef} from '@angular/core';
 export class MyErrorDirective {
 
   constructor(elr: ElementRef) {
-    elr.nativeElement.style.background='red';
+    elr.nativeElement.style.background = 'red';
   }
 
 }

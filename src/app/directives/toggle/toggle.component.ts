@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {Input} from '@angular/core';
-import {EventEmitter} from '@angular/core';
-import {Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -12,13 +9,13 @@ import {Observable} from 'rxjs';
 export class ToggleComponent implements OnInit {
 
   public isShow: boolean = false;
-  constructor() { }
-
   @Output()
   toggle: EventEmitter<String> = new EventEmitter();
-
   @Input() name: string = 'bla';
-  @Input() clientListener:Observable<String>; // do not expose the Subject to the client, only the Observable..
+  @Input() clientListener: Observable<String>; // do not expose the Subject to the client, only the Observable..
+
+  constructor() {
+  }
 
   ngOnInit() {
     // this is the subscribe
@@ -35,7 +32,7 @@ export class ToggleComponent implements OnInit {
   }
 
   close(event: String) {
-   (this.name !== event) ?  this.isShow = false : this.isShow = true;
+    (this.name !== event) ? this.isShow = false : this.isShow = true;
   }
 
 

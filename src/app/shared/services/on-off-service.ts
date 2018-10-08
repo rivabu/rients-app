@@ -6,11 +6,10 @@ import {BehaviorSubject, Observable} from 'rxjs';
 })
 
 export class OnOffService {
+  switchChange: Observable<Switch>;
   private switchManager_: BehaviorSubject<Switch>
     = new BehaviorSubject(Switch.Off);
   private switch_: Switch;
-  switchChange: Observable<Switch>;
-
 
   constructor() {
     this.switchChange = this.switchManager_.asObservable();
