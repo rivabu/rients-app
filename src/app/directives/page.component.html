@@ -1,27 +1,36 @@
 
 <p>
-  Directies
+  Directives
 </p>
-<img src="{{logoUrl}}">
-<br/>
-<toggle-parent></toggle-parent>
+
+<div class="row">
+  <div class="col-md-6 border" ><app-animate></app-animate></div>
+  <div class="col-md-6 border"><h1>Custom Pipe</h1>
+    <b>Square root of 25 is: {{25 | sqrt}}</b>
+    <br/>
+    <b>Square root of 729 is: {{729 | sqrt}}</b>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 border"><toggle-parent></toggle-parent></div>
+  <div class="col-md-6 border"><click-observer></click-observer></div>
+</div>
+<div class="row">
+  <div class="col-md-6 border"><on-off></on-off></div>
+  <div class="col-md-6 border"><node subscribeChannel="foo" Using the generic PubSub service..
+                              publishChannel="bar">
+  </node>
+    <node subscribeChannel="bar"
+          publishChannel="foo">
+    </node>
+    <node subscribeChannel="foo" Using the generic PubSub service..
+          publishChannel="bar">
+    </node></div>
+</div>
+<div class="row">
+  <div class="col-md-6 border"><outer></outer> @ViewChildren, QueryList</div>
+  <div class="col-md-6 border"><app-magic-eight-ball></app-magic-eight-ball></div>
+</div>
+
+
 <hr />
-<click-observer></click-observer>
-<br />
-<hr />
-<on-off></on-off>
-<br />
-<hr />
-<node subscribeChannel="foo" Using the generic PubSub service..
-      publishChannel="bar">
-</node>
-<node subscribeChannel="bar"
-      publishChannel="foo">
-</node>
-<node subscribeChannel="foo" Using the generic PubSub service..
-      publishChannel="bar">
-</node>
-<hr />
-<outer></outer> @ViewChildren, QueryList
-<hr />
-<app-magic-eight-ball></app-magic-eight-ball>

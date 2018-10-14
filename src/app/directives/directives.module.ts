@@ -12,12 +12,14 @@ import {NodeComponent} from './node/node.component';
 import {InnerComponent} from './inner-outer/inner.component';
 import {OuterComponent} from './inner-outer/outer.component';
 import { MagicEightBallComponent } from './magic-eight-ball/magic-eight-ball.component';
+import { SqrtPipe } from './sqrt.pipe';
+import { AnimateComponent } from './animate/animate.component';
 
 @NgModule({
   imports: [
     CommonModule, DirectivesRoutingModule, SharedModule
   ],
-  declarations: [PageComponent, MyStyleComponent, ChangeBgColorDirective, ToggleComponent, ToggleParentComponent, ClickObserverComponent, NodeComponent, InnerComponent, OuterComponent, MagicEightBallComponent]
+  declarations: [PageComponent, MyStyleComponent, ChangeBgColorDirective, ToggleComponent, ToggleParentComponent, ClickObserverComponent, NodeComponent, InnerComponent, OuterComponent, MagicEightBallComponent, SqrtPipe, AnimateComponent, AnimateComponent]
 })
 export class DirectivesModule {
 }

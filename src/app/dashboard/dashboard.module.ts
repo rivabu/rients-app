@@ -7,11 +7,12 @@ import {HeaderComponent} from './header/header.component';
 import {DirectivesModule} from '../directives/directives.module';
 import {MyFormsModule} from '../forms/myforms.module';
 import {SharedModule} from '../shared/shared.module';
+import {SummaryModule} from "../summary/summary.module";
 
 @NgModule({
   imports: [
     CommonModule,
-    DashboardRoutingModule, TodosModule, DirectivesModule, MyFormsModule, SharedModule
+    DashboardRoutingModule, TodosModule, DirectivesModule, MyFormsModule, SharedModule, SummaryModule
   ],
   declarations: [DashboardComponent, HeaderComponent]
 })

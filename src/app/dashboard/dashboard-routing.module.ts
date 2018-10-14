@@ -25,6 +25,10 @@ const dashboardRoutes: Routes = [
         loadChildren: '../forms/myforms.module#MyFormsModule'
       },
       {
+        path: 'summary',
+        loadChildren: '../summary/summary.module#SummaryModule'
+      },
+      {
         path: '',
         redirectTo: 'todos'
       },
