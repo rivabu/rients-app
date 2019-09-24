@@ -1,7 +1,7 @@
 ===repo===
 
 https://github.com/rivabu/rients-app.git
-rivabu/straal01
+
 
 ===urls===
 prod url (gezipte content)
